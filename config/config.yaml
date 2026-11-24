@@ -24,49 +24,22 @@ schedule:
 
 
 # ===============================================================
-# 2. 数据源 - 热榜平台（已关闭娱乐与大众热搜）
+# 2. 数据源 - 热榜平台（仅保留财联社与华尔街见闻，用于捕捉基本面异动）
 # ===============================================================
 platforms:
-  enabled: false
+  enabled: true
   api_url: ""
   sources:
-    - id: "toutiao"
-      name: "今日头条"
-      expected_domain: "toutiao.com"
-    - id: "baidu"
-      name: "百度热搜"
-      expected_domain: "baidu.com"
-    - id: "wallstreetcn-hot"
-      name: "华尔街见闻"
-      expected_domain: "wallstreetcn.com"
-    - id: "thepaper"
-      name: "澎湃新闻"
-      expected_domain: "thepaper.cn"
-    - id: "bilibili-hot-search"
-      name: "bilibili 热搜"
-      expected_domain: "bilibili.com"
     - id: "cls-hot"
       name: "财联社热门"
       expected_domain: "cls.cn"
-    - id: "ifeng"
-      name: "凤凰网"
-      expected_domain: "ifeng.com"
-    - id: "tieba"
-      name: "贴吧"
-      expected_domain: "baidu.com"
-    - id: "weibo"
-      name: "微博"
-      expected_domain: "weibo.com"
-    - id: "douyin"
-      name: "抖音"
-      expected_domain: "douyin.com"
-    - id: "zhihu"
-      name: "知乎"
-      expected_domain: "zhihu.com"
+    - id: "wallstreetcn-hot"
+      name: "华尔街见闻"
+      expected_domain: "wallstreetcn.com"
 
 
 # ===============================================================
-# 3. 数据源 - RSS 订阅（已替换为 AI 优惠 / 科技动态 / GitHub 热门）
+# 3. 数据源 - RSS 订阅（AI 优惠 / 科技动态 / GitHub 热门）
 # ===============================================================
 rss:
   enabled: true
@@ -137,7 +110,7 @@ report:
 
 
 # ===============================================================
-# 4.5 筛选策略（已开启 AI 智能筛选）
+# 4.5 筛选策略（AI 智能筛选）
 # ===============================================================
 filter:
   method: "ai"
@@ -170,7 +143,7 @@ display:
     - ai_analysis
 
   regions:
-    hotlist: false
+    hotlist: true
     new_items: false
     rss: true
     web_search: false
@@ -257,7 +230,7 @@ ai:
 
 
 # ===============================================================
-# 9. AI 分析功能（已开启 RSS 内容中文总结）
+# 9. AI 分析功能（开启 RSS 与财经热榜中文总结）
 # ===============================================================
 ai_analysis:
   enabled: true
@@ -273,7 +246,7 @@ ai_analysis:
 
 
 # ===============================================================
-# 10. AI 翻译功能（已开启 RSS 英文标题转中文）
+# 10. AI 翻译功能（开启 RSS 英文标题转中文）
 # ===============================================================
 ai_translation:
   enabled: true
